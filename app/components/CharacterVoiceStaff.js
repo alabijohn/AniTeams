@@ -53,13 +53,13 @@ export default function CharacterVoiceStaff({ animeId }) {
   if (error) return <p className="text-red-400">{error}</p>;
 
   return (
-    <div className="py-6 overflow-hidden">
-      <div className="px-4">
+    <div className="py-6 px-4">
+      <div className="max-w-screen-xl mx-auto w-full overflow-hidden">
         <h2 className="text-white text-2xl font-semibold mb-4">Characters & Voice Actors</h2>
-        <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-transparent">
-          <div className="flex gap-6 pr-4">
+        <div className="w-full max-w-full overflow-x-auto scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-transparent">
+          <div className="flex gap-6">
             {data.characters.edges.map(({ node, voiceActors }) => (
-              <div key={node.id} className="flex flex-col items-center shrink-0">
+              <div key={node.id} className="flex flex-col items-center shrink-0 min-w-[8rem]">
                 <img src={node.image.large} alt={node.name.full} className="w-32 h-32 rounded-full object-cover border-4 border-purple-500 shadow-lg" />
                 <span className="mt-2 text-white text-center text-sm">{node.name.full}</span>
               </div>
@@ -68,10 +68,10 @@ export default function CharacterVoiceStaff({ animeId }) {
         </div>
 
         <h2 className="text-white text-2xl font-semibold mt-10 mb-4">Staff</h2>
-        <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-transparent">
-          <div className="flex gap-6 pr-4">
+        <div className="w-full max-w-full overflow-x-auto scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-transparent">
+          <div className="flex gap-6">
             {data.staff.edges.map(({ node }) => (
-              <div key={node.id} className="flex flex-col items-center shrink-0">
+              <div key={node.id} className="flex flex-col items-center shrink-0 min-w-[8rem]">
                 <img src={node.image.large} alt={node.name.full} className="w-32 h-32 rounded-full object-cover border-4 border-purple-500 shadow-lg" />
                 <span className="mt-2 text-white text-center text-sm">{node.name.full}</span>
               </div>
