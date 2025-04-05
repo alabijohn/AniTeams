@@ -53,13 +53,13 @@ export default function CharacterVoiceStaff({ animeId }) {
   if (error) return <p className="text-red-400">{error}</p>;
 
   return (
-    <div className="py-6 px-4 max-w-screen overflow-hidden">
-      <div className="max-w-screen-xl mx-auto w-full space-y-12">
+    <div className="py-6 px-4 max-w-screen overflow-hidden min-w-0">
+      <div className="max-w-screen-xl mx-auto w-full space-y-12 min-w-0">
         {/* Characters Section */}
-        <div className="space-y-4">
+        <div className="space-y-4 min-w-0">
           <h2 className="text-white text-2xl font-semibold">Characters & Voice Actors</h2>
-          <div className="w-full max-w-full overflow-hidden">
-            <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-transparent">
+          <div className="w-full overflow-hidden">
+            <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-transparent w-full">
               <div className="flex gap-4 w-max">
                 {data.characters.edges.map(({ node, voiceActors }) => (
                   <div key={node.id} className="flex flex-col items-center shrink-0 w-32">
@@ -73,10 +73,10 @@ export default function CharacterVoiceStaff({ animeId }) {
         </div>
 
         {/* Staff Section */}
-        <div className="space-y-4">
+        <div className="space-y-4 min-w-0">
           <h2 className="text-white text-2xl font-semibold">Staff</h2>
-          <div className="w-full max-w-full overflow-hidden">
-            <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-transparent">
+          <div className="w-full overflow-hidden">
+            <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-purple-600 scrollbar-track-transparent w-full">
               <div className="flex gap-4 w-max">
                 {data.staff.edges.map(({ node }) => (
                   <div key={node.id} className="flex flex-col items-center shrink-0 w-32">
